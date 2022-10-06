@@ -1,0 +1,6 @@
+@import './normalize.css';
+body {
+    background: rgb(22, 21, 20);
+	color: rgb(255, 255, 255);
+    font-family: BonvenoCFLight, Didot;
+}

@@ -1,0 +1,21 @@
+.line {
+    border-bottom: 1px solid rgb(79, 78, 77);
+    margin: 1rem;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: auto;
+}
+.main {
+    width: 70%;
+}
+.secundary {
+    width: 30%;
+}
+.secundaryTitle {
+    padding-left: 1rem;
+    font-weight: normal;
+}
