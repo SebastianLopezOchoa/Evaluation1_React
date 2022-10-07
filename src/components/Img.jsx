@@ -1,5 +1,5 @@
 import styles from './Img.module.css'
-const Img = ({ product }) => {
+const Img = ({ product,m }) => {
     return (
         <img src={product.image} alt="Image shoes" className={styles.sizeImg} />
     )

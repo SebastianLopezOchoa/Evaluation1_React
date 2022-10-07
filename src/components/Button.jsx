@@ -1,7 +1,7 @@
 import styles from './Button.module.css'
-const Button = () => {
+const Button = ({ product, addToCart }) => {
   return (
-    <button className={styles.btn}>Add To Cart</button>
+    <button onClick={() => addToCart(product)} className={styles.btn}>Add To Cart</button>
   )
 }
 

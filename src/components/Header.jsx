@@ -1,9 +1,16 @@
 import styles from './Header.module.css'
-
-const Header = () => {
+import { MdShoppingCart } from 'react-icons/Md'
+const Header = ({ shoppingCarts }) => {
   return (
-    <header>
-      <h1 className={styles.overallTitle}>Evaluation 1</h1>
+    <header className={styles.container}>
+      <div className={styles.main}>
+        <h1 className={styles.overallTitle}>Evaluation 1</h1>
+      </div>
+      <div className={styles.secundary}>
+        <button className={styles.btn}>
+          <MdShoppingCart /> {shoppingCarts.length} Products
+        </button>
+      </div>
     </header>
   )
 }
