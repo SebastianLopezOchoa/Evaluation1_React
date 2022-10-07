@@ -1,15 +1,43 @@
 import styles from './CartSummary.module.css'
-const CartSummary = ({ shoppingCarts }) => {
+const CartSummary = ({ shoppingCarts, inputCupon, setInputCupon, cupon, setCupon }) => {
     const subTotalPrice = shoppingCarts.reduce(
         (prev, act) => (prev += act.price * act.quantityShopping),
         0
     );
+
+    const handleInputCupon = ({ target }) => {
+        setInputCupon(target.value);
+    };
+
+    const handlerSubmitCupon = (env) => {
+        env.preventDefault();
+        setCupon(inputCupon);
+        setInputCupon('');
+    };
+
+    /*
+    No me acepta validaciones de min y max con onClick *carita triste*
+    <input type="number" placeholder="ENTER COUPON CODE" className={styles.inputNumber}
+        value={inputCupon}
+        onChange={handleInputCupon}
+        min="0" max="100" />
+    <button onClick={() => handlerSubmitCupon()}>Apply</button>
+    <span className={styles.right}>{cupon}</span>
+     */
+
     if (shoppingCarts.length === 0) return <></>
     return (
         <div className={styles.container}>
             <div>
-                <span className={styles.bold}>ENTER COUPON CODE</span>
-                <input type="number" className={styles.right} min={0} max={100} />
+                <form onSubmit={handlerSubmitCupon}>
+                    <input type="number" placeholder="ENTER COUPON CODE" className={styles.inputNumber}
+                        value={inputCupon}
+                        onChange={handleInputCupon}
+                        min="0" max="100" required/>
+                    <button type='submit'>Apply</button>
+                    <span className={`${styles.marginCupon} ${styles.right}`}>{cupon}</span>
+                </form>
+                
             </div>
             <div className={styles.line}></div>
             <div className={`${styles.margin} ${styles.colorGray}`}>
@@ -22,12 +50,12 @@ const CartSummary = ({ shoppingCarts }) => {
             </div>
             <div className={styles.colorGray}>
                 <span>COUPON</span>
-                <span className={styles.right}>$</span>
+                <span className={styles.right}>${cupon}</span>
             </div>
             <div className={styles.line}></div>
             <div>
                 <span className={styles.font}>TOTAL</span>
-                <span className={`${styles.right} ${styles.font} ${styles.bold}`}>${subTotalPrice}</span>
+                <span className={`${styles.right} ${styles.font} ${styles.bold}`}>${subTotalPrice-cupon}</span>
             </div>
         </div>
     )

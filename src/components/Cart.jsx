@@ -1,20 +1,18 @@
 import styles from './Cart.module.css'
 import Img from './Img'
-import React from 'react'
-
-const Cart = ({ product }) => {
+const Cart = ({ shoppingCart }) => {
     return (
-        <div key={product.id} className={styles.container}>
+        <div key={shoppingCart.id} className={styles.container}>
             <Img
-                product={product}
+                product={shoppingCart}
             />
             <div className={`${styles.content} ${styles.main}`}>
-                <p className={styles.uppercase}>{product.name}</p>
-                <p className={styles.color}>{product.description}</p>
-                <p>${product.price}</p>
+                <p className={styles.uppercase}>{shoppingCart.name}</p>
+                <p className={styles.color}>{shoppingCart.description}</p>
+                <p>${shoppingCart.price}</p>
             </div>
             <div className={styles.secundary}>
-                <p>{product.quantityShopping}</p>
+                <p>{shoppingCart.quantityShopping}</p>
             </div>
         </div>
     )

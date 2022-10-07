@@ -4,9 +4,9 @@ const ShoppingCart = ({ shoppingCarts }) => {
     if (shoppingCarts.length === 0) return <h5 className={styles.textEmpty}>Your shopping cart is empty</h5>
     return (
         <div>
-            {shoppingCarts.map((product) => (
-                <Cart key={product.id}
-                    product={product}
+            {shoppingCarts.map((shoppingCart) => (
+                <Cart key={shoppingCart.id}
+                    shoppingCart={shoppingCart}
                 />
             ))}
         </div>

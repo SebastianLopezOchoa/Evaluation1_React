@@ -8,10 +8,12 @@ import CartSummary from './components/CartSummary';
 const App = () => {
   const { products } = data;
   const [shoppingCarts, setShoppingCarts] = useState([]);
+  const [inputCupon, setInputCupon] = useState('');
+  const [cupon, setCupon] = useState(10)
 
   const addToCart = (product) => {
     const exist = shoppingCarts.find((shoppingCart) => shoppingCart.id === product.id);
-    if (exist ) {
+    if (exist) {
       setShoppingCarts(
         shoppingCarts.map((shoppingCart) =>
           shoppingCart.id === product.id ? { ...exist, quantityShopping: exist.quantityShopping + 1 } : shoppingCart
@@ -24,7 +26,9 @@ const App = () => {
 
   return (
     <>
-      <Header shoppingCarts={shoppingCarts} />
+      <Header
+        shoppingCarts={shoppingCarts}
+      />
       <div className={styles.line} />
       <ProductList
         products={products}
@@ -45,6 +49,10 @@ const App = () => {
           <div className={styles.line} />
           <CartSummary
             shoppingCarts={shoppingCarts}
+            inputCupon={inputCupon}
+            setInputCupon={setInputCupon}
+            cupon={cupon}
+            setCupon={setCupon}
           />
         </div>
       </div>
