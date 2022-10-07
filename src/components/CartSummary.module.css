@@ -1,0 +1,23 @@
+.line {
+    border-bottom: 1px solid rgb(79, 78, 77);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.container {
+    padding-left: 1rem;
+}
+.right {
+    float: right;
+}
+.bold {
+    font-weight: bold;
+}
+.margin {
+    margin-bottom: 1rem;
+}
+.colorGray {
+    color: rgba(209, 209, 209, 0.582);
+}
+.font {
+    font-size: 1.9rem;
+}

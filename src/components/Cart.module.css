@@ -3,14 +3,23 @@
     width: 96.5%;
     height: 110px;
     margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .content {
-    padding-left: 6.6rem;
+    padding-left: 1rem;
     font-size: 0.9rem;
 }
 .uppercase {
     text-transform: uppercase;
 }
 .color {
-    color: rgba(209, 209, 209, 0.582);
+    color: rgba(209, 209, 209, 0.884);
+}
+.main {
+    width: 40%;
+}
+.secundary {
+    width: 30%;
 }

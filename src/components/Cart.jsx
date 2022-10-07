@@ -8,12 +8,14 @@ const Cart = ({ product }) => {
             <Img
                 product={product}
             />
-            <div className={styles.content}>
+            <div className={`${styles.content} ${styles.main}`}>
                 <p className={styles.uppercase}>{product.name}</p>
                 <p className={styles.color}>{product.description}</p>
                 <p>${product.price}</p>
             </div>
-
+            <div className={styles.secundary}>
+                <p>{product.quantityShopping}</p>
+            </div>
         </div>
     )
 }
