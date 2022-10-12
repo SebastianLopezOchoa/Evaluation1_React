@@ -1,17 +1,16 @@
+import { useEffect, useState } from 'react';
 import styles from './Cart.module.css'
 import Img from './Img'
-const Cart = ({ shoppingCart, inputAvailability, setinputAvailability, availability, setAvailability }) => {
-
-    const handleInputAvailability = ({ target }) => {
-        setinputAvailability(target.value);
-    };
-
-    const handlerSubmitAvailability = (env) => {
-        //in progress 
-        env.preventDefault();
-        setAvailability(inputAvailability);
-    };
-
+const Cart = ({ shoppingCart, addToCart, removeToCart }) => {
+    const [completed, setCompleted] = useState(false);
+    
+    useEffect(() => {
+        if (shoppingCart.quantityAvailable === shoppingCart.quantityShopping) {
+            setCompleted(true);
+        } else {
+            setCompleted(false);
+        }
+    }, [shoppingCart])
 
     return (
         <div key={shoppingCart.id} className={styles.container}>
@@ -24,14 +23,10 @@ const Cart = ({ shoppingCart, inputAvailability, setinputAvailability, availabil
                 <p>${shoppingCart.price}</p>
             </div>
             <div className={styles.secundary}>
-                <p>{shoppingCart.quantityShopping}</p>
-                <form onSubmit={handlerSubmitAvailability}>
-                    <input type="number" 
-                        value={inputAvailability}
-                        onChange={handleInputAvailability}
-                         required/>
-                    <button type='submit'>Apply</button>
-                </form>
+                <button onClick={() => removeToCart(shoppingCart)} className={styles.remove}>-</button>
+                <p className={styles.text}>{shoppingCart.quantityShopping} pcs</p>
+                <button onClick={() => addToCart(shoppingCart)} className={`${styles.add} ${completed ? styles.none : ''}`} >+</button>
+                <button className={`${styles.addNone} ${completed ? '' : styles.none}`} >+</button>
             </div>
         </div>
     )
