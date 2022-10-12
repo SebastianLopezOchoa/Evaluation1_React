@@ -2,12 +2,14 @@
     border-bottom: 1px solid rgb(79, 78, 77);
     margin-bottom: 1rem;
     margin-top: 1rem;
+    width: 96%;
 }
 .container {
     padding-left: 1rem;
 }
 .right {
     float: right;
+    padding-right: 1.3rem;
 }
 .bold {
     font-weight: bold;

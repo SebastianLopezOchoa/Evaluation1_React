@@ -2,25 +2,26 @@ import styles from './App.module.css'
 import data from './data'
 import ProductList from "./components/ProductList"
 import Header from './components/Header'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ShoppingCart from './components/ShoppingCart';
 import CartSummary from './components/CartSummary';
 const App = () => {
   const { products } = data;
+  const [prod, setProd] = useState(products.map((pro) => { return { ...pro, quantityShopping: 0 } }))
   const [shoppingCarts, setShoppingCarts] = useState([]);
   const [inputCupon, setInputCupon] = useState('');
   const [cupon, setCupon] = useState(10)
+  const [inputAvailability, setinputAvailability] = useState('')
+  const [availability, setAvailability] = useState(0)
 
   const addToCart = (product) => {
     const exist = shoppingCarts.find((shoppingCart) => shoppingCart.id === product.id);
     if (exist) {
-      setShoppingCarts(
-        shoppingCarts.map((shoppingCart) =>
-          shoppingCart.id === product.id ? { ...exist, quantityShopping: exist.quantityShopping + 1 } : shoppingCart
-        )
-      );
+      setShoppingCarts(shoppingCarts.map((shoppingCart) => shoppingCart.id === product.id ? { ...exist, quantityShopping: exist.quantityShopping + 1 } : shoppingCart));
+      setProd(prod.map((pro) => pro.id === product.id ? { ...product, quantityShopping: exist.quantityShopping + 1 } : pro));
     } else {
       setShoppingCarts([...shoppingCarts, { ...product, quantityShopping: 1 }]);
+      setProd(prod.map((pro) => pro.id === product.id ? { ...product, quantityShopping: 1 } : pro));
     }
   };
 
@@ -31,7 +32,7 @@ const App = () => {
       />
       <div className={styles.line} />
       <ProductList
-        products={products}
+        products={prod}
         addToCart={addToCart}
       />
       <div className={styles.line} />
@@ -41,6 +42,10 @@ const App = () => {
           <div className={styles.line} />
           <ShoppingCart
             shoppingCarts={shoppingCarts}
+            inputAvailability={inputAvailability}
+            setinputAvailability={setinputAvailability}
+            availability={availability}
+            setAvailability={setAvailability}
           />
           <div className={styles.line} />
         </div>

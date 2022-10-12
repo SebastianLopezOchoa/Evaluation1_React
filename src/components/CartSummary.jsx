@@ -15,16 +15,6 @@ const CartSummary = ({ shoppingCarts, inputCupon, setInputCupon, cupon, setCupon
         setInputCupon('');
     };
 
-    /*
-    No me acepta validaciones de min y max con onClick *carita triste*
-    <input type="number" placeholder="ENTER COUPON CODE" className={styles.inputNumber}
-        value={inputCupon}
-        onChange={handleInputCupon}
-        min="0" max="100" />
-    <button onClick={() => handlerSubmitCupon()}>Apply</button>
-    <span className={styles.right}>{cupon}</span>
-     */
-
     if (shoppingCarts.length === 0) return <></>
     return (
         <div className={styles.container}>

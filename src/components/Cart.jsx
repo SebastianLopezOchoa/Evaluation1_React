@@ -1,6 +1,18 @@
 import styles from './Cart.module.css'
 import Img from './Img'
-const Cart = ({ shoppingCart }) => {
+const Cart = ({ shoppingCart, inputAvailability, setinputAvailability, availability, setAvailability }) => {
+
+    const handleInputAvailability = ({ target }) => {
+        setinputAvailability(target.value);
+    };
+
+    const handlerSubmitAvailability = (env) => {
+        //in progress 
+        env.preventDefault();
+        setAvailability(inputAvailability);
+    };
+
+
     return (
         <div key={shoppingCart.id} className={styles.container}>
             <Img
@@ -13,6 +25,13 @@ const Cart = ({ shoppingCart }) => {
             </div>
             <div className={styles.secundary}>
                 <p>{shoppingCart.quantityShopping}</p>
+                <form onSubmit={handlerSubmitAvailability}>
+                    <input type="number" 
+                        value={inputAvailability}
+                        onChange={handleInputAvailability}
+                         required/>
+                    <button type='submit'>Apply</button>
+                </form>
             </div>
         </div>
     )
