@@ -7,23 +7,29 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .content {
     padding-left: 1rem;
     font-size: 0.9rem;
 }
+
 .uppercase {
     text-transform: uppercase;
 }
+
 .color {
     color: rgba(209, 209, 209, 0.884);
 }
+
 .main {
     width: 40%;
 }
+
 .secundary {
     width: 40%;
     display: flex;
 }
+
 .add {
     font-size: 1.5rem;
     height: 40%;
@@ -35,6 +41,7 @@
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
+
 .addNone {
     font-size: 1.5rem;
     height: 40%;
@@ -45,9 +52,11 @@
     color: rgb(255, 255, 255);
     background-color: rgb(79, 78, 77);
 }
+
 .none {
     display: none;
 }
+
 .remove {
     font-size: 1.5rem;
     height: 40%;
@@ -59,6 +68,7 @@
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
+
 .text {
     margin: auto;
 }

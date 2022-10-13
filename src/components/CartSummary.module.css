@@ -4,28 +4,36 @@
     margin-top: 1rem;
     width: 96%;
 }
+
 .container {
     padding-left: 1rem;
 }
+
 .right {
     float: right;
     padding-right: 1.3rem;
 }
+
 .bold {
     font-weight: bold;
 }
+
 .margin {
     margin-bottom: 1rem;
 }
+
 .colorGray {
     color: rgba(209, 209, 209, 0.582);
 }
+
 .font {
     font-size: 1.9rem;
 }
-.inputNumber{
+
+.inputNumber {
     width: 12.2rem;
 }
+
 .marginCupon {
     margin-top: 0.4rem;
 }

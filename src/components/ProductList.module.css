@@ -1,9 +1,10 @@
-.container{
+.container {
     max-width: 1300px;
     margin: auto;
     padding-left: 1rem;
 
 }
-.column{
+
+.column {
     columns: 4;
 }

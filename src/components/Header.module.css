@@ -5,6 +5,7 @@
     font-weight: normal;
     padding-left: 1rem;
 }
+
 .container {
     display: flex;
     flex-direction: row;
@@ -12,13 +13,16 @@
     max-width: 1300px;
     margin: auto;
 }
+
 .main {
     width: 70%;
 }
+
 .secundary {
     width: 30%;
     padding-left: 1rem;
 }
+
 .btn {
     margin-top: 1rem;
     font-size: 1.2rem;

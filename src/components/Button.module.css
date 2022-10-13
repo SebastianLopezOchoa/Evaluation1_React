@@ -7,13 +7,16 @@
     cursor: pointer;
     border: none;
 }
+
 .btn:hover {
     box-shadow: 0 2px 8px rgb(79, 78, 77);
     transition: all 0.2s ease;
 }
+
 .none {
     display: none;
 }
+
 .btn2 {
     font-size: 1.1rem;
     padding: 0.35rem;
