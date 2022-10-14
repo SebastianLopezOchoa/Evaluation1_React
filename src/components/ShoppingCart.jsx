@@ -1,6 +1,12 @@
 import Cart from './Cart';
 import styles from './ShoppingCart.module.css';
-const ShoppingCart = ({ shoppingCarts, addToCart, removeToCart }) => {
+const ShoppingCart = ({
+	shoppingCarts,
+	setShoppingCarts,
+	prod,
+	setProd,
+	deleteShoppingCart,
+}) => {
 	if (shoppingCarts.length === 0)
 		return <h5 className={styles.textEmpty}>Your shopping cart is empty</h5>;
 	return (
@@ -9,8 +15,11 @@ const ShoppingCart = ({ shoppingCarts, addToCart, removeToCart }) => {
 				<Cart
 					key={shoppingCart.id}
 					shoppingCart={shoppingCart}
-					addToCart={addToCart}
-					removeToCart={removeToCart}
+					shoppingCarts={shoppingCarts}
+					setShoppingCarts={setShoppingCarts}
+					prod={prod}
+					setProd={setProd}
+					deleteShoppingCart={deleteShoppingCart}
 				/>
 			))}
 		</div>

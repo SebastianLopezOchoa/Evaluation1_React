@@ -1,27 +1,26 @@
 .btn {
-    font-size: 1.1rem;
-    padding: 0.35rem;
-    border-radius: 0.5rem;
-    background-color: rgb(79, 78, 77);
-    width: 95%;
-    cursor: pointer;
-    border: none;
+	font-size: 1.1rem;
+	padding: 0.35rem;
+	border-radius: 0.5rem;
+	background-color: rgb(79, 78, 77);
+	width: 95%;
+	cursor: pointer;
+	border: none;
 }
 
 .btn:hover {
-    box-shadow: 0 2px 8px rgb(79, 78, 77);
-    transition: all 0.2s ease;
+	opacity: 0.95;
 }
 
 .none {
-    display: none;
+	display: none;
 }
 
 .btn2 {
-    font-size: 1.1rem;
-    padding: 0.35rem;
-    border-radius: 0.5rem;
-    background-color: #f04040;
-    width: 95%;
-    border: none;
+	font-size: 1.1rem;
+	padding: 0.35rem;
+	border-radius: 0.5rem;
+	background-color: #f04040;
+	width: 95%;
+	border: none;
 }

@@ -1,74 +1,64 @@
 .container {
-    border: 2px solid #777;
-    width: 96.5%;
-    height: 110px;
-    margin: 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+	border: 2px solid #777;
+	width: 96.5%;
+	height: 110px;
+	margin: 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .content {
-    padding-left: 1rem;
-    font-size: 0.9rem;
+	padding-left: 1rem;
+	font-size: 0.9rem;
 }
 
 .uppercase {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .color {
-    color: rgba(209, 209, 209, 0.884);
+	color: rgba(209, 209, 209, 0.884);
 }
 
 .main {
-    width: 40%;
+	width: 40%;
 }
 
 .secundary {
-    width: 40%;
-    display: flex;
+	width: 40%;
+	display: flex;
 }
 
-.add {
-    font-size: 1.5rem;
-    height: 40%;
-    width: 2.5rem;
-    margin: auto;
-    border-radius: 0.5rem;
-    border: none;
-    background-color: #22c738;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
+.input {
+	height: 2.5rem;
+	width: 2.9rem;
 }
 
-.addNone {
-    font-size: 1.5rem;
-    height: 40%;
-    width: 2.5rem;
-    margin: auto;
-    border-radius: 0.5rem;
-    border: none;
-    color: rgb(255, 255, 255);
-    background-color: rgb(79, 78, 77);
+.btn {
+	height: 2.5rem;
+	cursor: pointer;
 }
 
-.none {
-    display: none;
-}
-
-.remove {
-    font-size: 1.5rem;
-    height: 40%;
-    width: 2.5rem;
-    margin: auto;
-    border-radius: 0.5rem;
-    border: none;
-    background-color: #f04040;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
+.form {
+	margin: auto;
 }
 
 .text {
-    margin: auto;
+	padding-right: 2rem;
+	font-weight: bold;
+}
+
+.bt {
+	background-color: #f04040;
+	color: rgb(255, 255, 255);
+	height: 2.5rem;
+	width: 2.9rem;
+	margin: auto;
+	cursor: pointer;
+	border: none;
+}
+
+.bt:hover {
+	opacity: 0.95;
 }

@@ -36,7 +36,9 @@ const CartSummary = ({
 						max='100'
 						required
 					/>
-					<button type='submit'>Apply</button>
+					<button type='submit' className={styles.bt}>
+						Apply
+					</button>
 					<span className={`${styles.marginCupon} ${styles.right}`}>
 						{cupon}
 					</span>

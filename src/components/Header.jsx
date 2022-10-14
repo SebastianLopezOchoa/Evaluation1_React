@@ -8,7 +8,7 @@ const Header = ({ shoppingCarts }) => {
 			</div>
 			<div className={styles.secundary}>
 				<button className={styles.btn}>
-					<MdShoppingCart /> {shoppingCarts.length}{' '}
+					<MdShoppingCart className={styles.pad} /> {shoppingCarts.length}{' '}
 					{shoppingCarts.length === 1 ? 'Product' : 'Products'}
 				</button>
 			</div>

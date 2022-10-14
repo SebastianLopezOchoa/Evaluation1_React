@@ -1,17 +1,47 @@
 import { useEffect, useState } from 'react';
 import styles from './Cart.module.css';
 import Img from './Img';
-const Cart = ({ shoppingCart, addToCart, removeToCart }) => {
-	const [completed, setCompleted] = useState(false);
+import { MdDelete } from 'react-icons/Md';
+const Cart = ({
+	shoppingCart,
+	shoppingCarts,
+	setShoppingCarts,
+	prod,
+	setProd,
+	deleteShoppingCart,
+}) => {
+	const [inputAvailability, setinputAvailability] = useState('');
+	const [availability, setAvailability] = useState(0);
+
+	const handleInputAvailability = ({ target }) => {
+		setinputAvailability(target.value);
+	};
+
+	const handlerSubmitAvailability = env => {
+		env.preventDefault();
+		setAvailability(inputAvailability);
+		setinputAvailability('');
+	};
 
 	useEffect(() => {
-		if (shoppingCart.quantityAvailable === shoppingCart.quantityShopping) {
-			setCompleted(true);
-		} else {
-			setCompleted(false);
+		if (availability !== 0) {
+			setShoppingCarts(
+				shoppingCarts.map(pro =>
+					pro.id === shoppingCart.id
+						? { ...shoppingCart, quantityShopping: parseInt(availability) }
+						: pro
+				)
+			);
+			setProd(
+				prod.map(pro =>
+					pro.id === shoppingCart.id
+						? { ...shoppingCart, quantityShopping: parseInt(availability) }
+						: pro
+				)
+			);
+			setAvailability(0);
 		}
-	}, [shoppingCart]);
-
+	}, [availability]);
 	return (
 		<div key={shoppingCart.id} className={styles.container}>
 			<Img product={shoppingCart} />
@@ -21,21 +51,29 @@ const Cart = ({ shoppingCart, addToCart, removeToCart }) => {
 				<p>${shoppingCart.price}</p>
 			</div>
 			<div className={styles.secundary}>
+				<form onSubmit={handlerSubmitAvailability} className={styles.form}>
+					<span className={styles.text}>
+						{shoppingCart.quantityShopping} pcs{' '}
+					</span>
+					<input
+						type='number'
+						className={styles.input}
+						placeholder='qty'
+						value={inputAvailability}
+						onChange={handleInputAvailability}
+						min='1'
+						max={shoppingCart.quantityAvailable}
+						required
+					/>
+					<button type='submit' className={styles.btn}>
+						Apply
+					</button>
+				</form>
 				<button
-					onClick={() => removeToCart(shoppingCart)}
-					className={styles.remove}
+					onClick={() => deleteShoppingCart(shoppingCart)}
+					className={styles.bt}
 				>
-					-
-				</button>
-				<p className={styles.text}>{shoppingCart.quantityShopping} pcs</p>
-				<button
-					onClick={() => addToCart(shoppingCart)}
-					className={`${styles.add} ${completed ? styles.none : ''}`}
-				>
-					+
-				</button>
-				<button className={`${styles.addNone} ${completed ? '' : styles.none}`}>
-					+
+					<MdDelete />
 				</button>
 			</div>
 		</div>

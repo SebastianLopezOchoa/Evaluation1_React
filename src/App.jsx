@@ -45,37 +45,15 @@ const App = () => {
 		}
 	};
 
-	const removeToCart = product => {
-		const exist = shoppingCarts.find(
-			shoppingCart => shoppingCart.id === product.id
+	const deleteShoppingCart = product => {
+		setShoppingCarts(
+			shoppingCarts.filter(shoppingCart => shoppingCart.id !== product.id)
 		);
-		if (exist.quantityShopping === 1) {
-			setShoppingCarts(
-				shoppingCarts.filter(shoppingCart => shoppingCart.id !== product.id)
-			);
-			setProd(
-				prod.map(pro =>
-					pro.id === product.id
-						? { ...product, quantityShopping: exist.quantityShopping - 1 }
-						: pro
-				)
-			);
-		} else {
-			setShoppingCarts(
-				shoppingCarts.map(shoppingCart =>
-					shoppingCart.id === product.id
-						? { ...exist, quantityShopping: exist.quantityShopping - 1 }
-						: shoppingCart
-				)
-			);
-			setProd(
-				prod.map(pro =>
-					pro.id === product.id
-						? { ...product, quantityShopping: exist.quantityShopping - 1 }
-						: pro
-				)
-			);
-		}
+		setProd(
+			prod.map(pro =>
+				pro.id === product.id ? { ...product, quantityShopping: 0 } : pro
+			)
+		);
 	};
 
 	return (
@@ -90,8 +68,10 @@ const App = () => {
 					<div className={styles.line} />
 					<ShoppingCart
 						shoppingCarts={shoppingCarts}
-						addToCart={addToCart}
-						removeToCart={removeToCart}
+						setShoppingCarts={setShoppingCarts}
+						prod={prod}
+						setProd={setProd}
+						deleteShoppingCart={deleteShoppingCart}
 					/>
 					<div className={styles.line} />
 				</div>

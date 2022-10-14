@@ -1,39 +1,43 @@
 .line {
-    border-bottom: 1px solid rgb(79, 78, 77);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    width: 96%;
+	border-bottom: 1px solid rgb(79, 78, 77);
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+	width: 96%;
 }
 
 .container {
-    padding-left: 1rem;
+	padding-left: 1rem;
 }
 
 .right {
-    float: right;
-    padding-right: 1.3rem;
+	float: right;
+	padding-right: 1.3rem;
 }
 
 .bold {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .margin {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .colorGray {
-    color: rgba(209, 209, 209, 0.582);
+	color: rgba(209, 209, 209, 0.582);
 }
 
 .font {
-    font-size: 1.9rem;
+	font-size: 1.9rem;
 }
 
 .inputNumber {
-    width: 12.2rem;
+	width: 12.2rem;
 }
 
 .marginCupon {
-    margin-top: 0.4rem;
+	margin-top: 0.4rem;
+}
+
+.bt {
+	cursor: pointer;
 }
